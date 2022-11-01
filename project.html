@@ -1,0 +1,56 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 11-01-2022
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Inventory Matrix">
+        
+      <lightning-combobox label="Project" 
+                          value={value} 
+                          placeholder="Select Project" 
+                          options={poptions} 
+                          onchange={handleChangedProject}>
+      </lightning-combobox>
+
+      <lightning-combobox
+                           label="Cluster"
+                           placeholder="Select Cluster"
+                           value={value}
+                           onchange={handleChangedCluster}
+                           options={coptions}>
+     </lightning-combobox> 
+
+     <lightning-combobox
+                           label="Tower"
+                           placeholder="Select Tower"
+                           value={value}
+                           onchange={handleChangedTower}
+                           options={toptions}>
+     </lightning-combobox> 
+
+     <lightning-combobox
+                           label="Wing"
+                           placeholder="Select Wing"
+                           value={value}
+                           onchange={handleChangedWing}
+                           options={woptions}>
+     </lightning-combobox> 
+
+     <!--Show/hide card & data Table-->
+
+     <template if:true={isVisible}>
+      <lightning-card title="DataTable Unit">
+        <div style="height: 200px; "> 
+          <lightning-datatable key-field="id"
+                                data={data}
+                                columns={columns}>
+          </lightning-datatable>
+        </div>
+      </lightning-card>
+     </template> 
+      
+      </lightning-card>
+</template>
